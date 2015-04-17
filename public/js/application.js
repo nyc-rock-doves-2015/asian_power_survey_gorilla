@@ -1,7 +1,29 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  //create three initial fields
+  var survey = new Survey();
+  var question = new Question(survey);
+  survey.addQuestion(question);
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('form').on('click', '.removeChoice', function(event) {
+    $target = $(event.target)
+    $target.closest('.choice_add').remove();
+  });
+
+  $('.choice_form_list').keypress(function(event) {
+    $target = $(event.target)
+    if (event.keyCode == 13) {
+      event.preventDefault();
+      
+      var choice = new Choice(question);
+      question.addChoice(choice);
+      var choiceCount = question.choices.length + 1;
+
+      $node = newChoice(choiceCount);
+      $container = $target.closest('.choice_form_container').children('.choice_form_list')
+      $container.append($node);
+      $container.children('.choice_add').last().children('.choice_input').focus();
+      choiceCounter($target, choiceCount);
+    }
+  });
+
 });
