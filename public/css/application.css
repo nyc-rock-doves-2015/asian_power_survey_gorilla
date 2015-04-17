@@ -1,6 +1,5 @@
-#yield {
-  border: 2px solid black;
-  margin-top: 0px;
+.navbar {
+  margin-bottom: 0px !important;
 }
 
 #signin {
