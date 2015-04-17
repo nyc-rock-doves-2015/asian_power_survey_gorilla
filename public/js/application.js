@@ -16,15 +16,27 @@ $(document).ready(function() {
     $target.closest('.choice_form_container').children('.choice_form_list').append($node);
   });
 
-  $('.choice_input').keypress(function(event) {
+  $('.choice_form_list').keypress(function(event) {
     $target = $(event.target)
     if (event.keyCode == 13) {
       event.preventDefault();
       choiceCount++;
       $node = newChoice(choiceCount);
       $target.closest('.choice_form_container').children('.choice_form_list').append($node);
+      // $target.find('.choice_input').bind('keypress', choiceAdder());
     }
   });
+
+  // var choiceAdder = function(event) {
+  //   $target = $(event.target)
+  //   if (event.keyCode == 13) {
+  //     event.preventDefault();
+  //     choiceCount++;
+  //     $node = newChoice(choiceCount);
+  //     $target.closest('.choice_form_container').children('.choice_form_list').append($node);
+  //     $target.find('.choice_input').bind('keypress', choiceAdder());
+  //   }
+  // }
 
 
 
