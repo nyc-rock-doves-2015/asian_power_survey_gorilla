@@ -1,7 +1,8 @@
 $(document).ready(function() {
   //create three initial fields
-  var questionCount = 1;
-  var choiceCount = 1;
+  var survey = new Survey();
+  var question = new Question(survey);
+  survey.addQuestion(question);
 
   $('form').on('click', '.removeChoice', function(event) {
     $target = $(event.target)
@@ -12,7 +13,11 @@ $(document).ready(function() {
     $target = $(event.target)
     if (event.keyCode == 13) {
       event.preventDefault();
-      choiceCount++;
+      
+      var choice = new Choice(question);
+      question.addChoice(choice);
+      var choiceCount = question.choices.length + 1;
+
       $node = newChoice(choiceCount);
       $container = $target.closest('.choice_form_container').children('.choice_form_list')
       $container.append($node);
