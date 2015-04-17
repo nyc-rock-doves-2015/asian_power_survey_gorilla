@@ -4,12 +4,12 @@ get '/surveys' do
   erb :'/survey/index'
 end
 
-get '/surveys/:id' do |id|
-  erb :'survey/show'
-end
-
 get '/surveys/new' do
   erb :'/survey/new'
+end
+
+get '/surveys/:id' do |id|
+  erb :'survey/show'
 end
 
 post '/surveys' do
@@ -17,7 +17,7 @@ post '/surveys' do
   question = survey.questions.create(description: params[:survey][:question1][:description])
   question.add_choices(params)
 
-  "#{params.inspect}"
+  redirect '/surveys'
 end
 
 get '/surveys/:id/results' do
