@@ -14,7 +14,8 @@ $(document).ready(function() {
       event.preventDefault();
       choiceCount++;
       $node = newChoice(choiceCount);
-      $target.closest('.choice_form_container').children('.choice_form_list').append($node);
+      $container = $target.closest('.choice_form_container').children('.choice_form_list')
+      $container.append($node);
     }
   });
 

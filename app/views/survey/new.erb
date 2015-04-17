@@ -1,0 +1,20 @@
+<div class="survey_form_container">
+  <h2>Create a survey</h2>
+  <form class="survey_form" action="/surveys" method="post">
+    <div class="survey_form_title ">
+      <label>Survey Title:</label>
+      <input type="text" name="survey[title]">
+    </div>
+    <div class="survey_form_question_list">
+      <div class="survey_form_question">
+        <label for="question1">Question 1: </label>
+        <input type="hidden" name="survey[user]">
+        <input type="text" name="survey[question1]" id="question1">
+        <%= erb :'choice/_add_form' %>
+      </div>
+    </div>
+    <p>
+      <input type="submit" value="Submit Survey">
+    </p>
+  </form>
+</div>
