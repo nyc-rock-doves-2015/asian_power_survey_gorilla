@@ -3,6 +3,7 @@ class CreateQuestionsTable < ActiveRecord::Migration
     create_table :questions do |t|
       t.string :description, null: false
       t.references :survey, null: false
+      t.timestamps
     end
   end
 end

@@ -3,6 +3,7 @@ class CreateChoicesTable < ActiveRecord::Migration
     create_table :choices do |t|
       t.string :description, null: false
       t.references :question, null: false
+      t.timestamps
     end
   end
 end

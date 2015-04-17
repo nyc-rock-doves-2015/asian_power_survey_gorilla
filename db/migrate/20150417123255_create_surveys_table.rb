@@ -5,6 +5,7 @@ class CreateSurveysTable < ActiveRecord::Migration
       t.references :user, null: false
       t.string :image
       t.string :link_code
+      t.timestamps
     end
   end
 end
