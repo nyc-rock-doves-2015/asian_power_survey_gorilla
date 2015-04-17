@@ -3,17 +3,9 @@ $(document).ready(function() {
   var questionCount = 1;
   var choiceCount = 1;
 
-  //remove a textfield
   $('form').on('click', '.removeChoice', function(event) {
     $target = $(event.target)
     $target.closest('.choice_add').remove();
-  });
-
-  $('.addChoice').on('click', function(event){
-    $target = $(event.target)
-    choiceCount++;
-    $node = newChoice(choiceCount);
-    $target.closest('.choice_form_container').children('.choice_form_list').append($node);
   });
 
   $('.choice_form_list').keypress(function(event) {
@@ -23,21 +15,7 @@ $(document).ready(function() {
       choiceCount++;
       $node = newChoice(choiceCount);
       $target.closest('.choice_form_container').children('.choice_form_list').append($node);
-      // $target.find('.choice_input').bind('keypress', choiceAdder());
     }
   });
-
-  // var choiceAdder = function(event) {
-  //   $target = $(event.target)
-  //   if (event.keyCode == 13) {
-  //     event.preventDefault();
-  //     choiceCount++;
-  //     $node = newChoice(choiceCount);
-  //     $target.closest('.choice_form_container').children('.choice_form_list').append($node);
-  //     $target.find('.choice_input').bind('keypress', choiceAdder());
-  //   }
-  // }
-
-
 
 });
