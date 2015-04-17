@@ -4,24 +4,15 @@ $(document).ready(function() {
   var choiceCount = 1;
 
   //remove a textfield
-  $('form').on('click', '.removeQuestion', function(event) {
+  $('form').on('click', '.removeChoice', function(event) {
     $target = $(event.target)
-    $target.closest('.survey_form_question').remove();
-  });
-
-  //add a new node
-  $('.addQuestion').on('click', function(event){
-    $target = $(event.target)
-    questionCount++;
-    $node = newQuestion(questionCount);
-    $target.closest('.survey_form').children('.survey_form_question_list').append($node);
+    $target.closest('.choice_add').remove();
   });
 
   $('.addChoice').on('click', function(event){
     $target = $(event.target)
-    questionString = $target.closest('.survey_form_question').children('label').attr('for')
     choiceCount++;
-    $node = newChoice(questionString, choiceCount);
+    $node = newChoice(choiceCount);
     $target.closest('.choice_form_container').children('.choice_form_list').append($node);
   });
 });
