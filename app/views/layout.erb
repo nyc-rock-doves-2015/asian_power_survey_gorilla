@@ -26,15 +26,16 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-  <title></title>
+  <title>Team Asia</title>
 </head>
 
+<!-- Nav Bar -->
 <body>
   <div>
   <nav class="col-lg" id='navbar'>
     <div class='well'>
       <div id='main_brand' class='col-lg-4 col-lg-offset-4'>
-        <strong>Survey Gorilla</strong>
+        <a href='/'><strong>Survey Gorilla</strong></a>
       </div>
       <div class='col-sm-4' id='user_session_col'>
         <% if current_user %>
@@ -46,11 +47,27 @@
       </div>
     </div>
   </nav>
+<!-- ... -->
+
+<!-- Sidebar -->
+<div class='sidebar'>
+  <ul class="nav nav-pills nav-stacked">
+    <li role="presentation" class="active">
+      <a href="#">Surveys Taken</a>
+    </li>
+    <li role="presentation">
+      <a href="#">Surveys Created</a>
+    </li>
+    <li role="presentation">
+      <a href="/surveys/new">New Survey</a>
+    </li>
+  </ul>
+</div>
+<!-- ... -->
 
   <div>
-    <header>
-    </header>
     <%= yield %>
   </div>
+
 </body>
 </html>

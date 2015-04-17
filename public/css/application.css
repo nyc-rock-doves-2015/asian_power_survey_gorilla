@@ -1,7 +1,3 @@
-.auth_container {
-  position: relative;
-  top: 100px;
-}
 .container {
   font-family: verdana;
   text-align: center;
@@ -35,8 +31,12 @@
 #main_brand {
   font-size: 40px;
   font-family: georgia;
+  font-color: black;
   padding: 0;
   /*border: 1px solid black;*/
   text-align: center;
+}
 
+.sidebar {
+  width: 150px;
 }
