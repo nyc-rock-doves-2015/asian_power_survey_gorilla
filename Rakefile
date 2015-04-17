@@ -23,9 +23,9 @@ namespace :generate do
     puts "Creating #{model_path}"
     File.open(model_path, 'w+') do |f|
       f.write(<<-EOF.strip_heredoc)
-        class #{model_name} < ActiveRecord::Base
-          # Remember to create a migration!
-        end
+      class #{model_name} < ActiveRecord::Base
+        # Remember to create a migration!
+      end
       EOF
     end
   end
@@ -47,10 +47,10 @@ namespace :generate do
     puts "Creating #{path}"
     File.open(path, 'w+') do |f|
       f.write(<<-EOF.strip_heredoc)
-        class #{name} < ActiveRecord::Migration
-          def change
-          end
+      class #{name} < ActiveRecord::Migration
+        def change
         end
+      end
       EOF
     end
   end
@@ -72,14 +72,14 @@ namespace :generate do
     puts "Creating #{path}"
     File.open(path, 'w+') do |f|
       f.write(<<-EOF.strip_heredoc)
-        require 'spec_helper'
+      require 'spec_helper'
 
-        describe #{name} do
-          pending "add some examples to (or delete) #{__FILE__}"
-        end
-      EOF
+      describe #{name} do
+      pending "add some examples to (or delete) #{__FILE__}"
     end
+    EOF
   end
+end
 
 end
 
