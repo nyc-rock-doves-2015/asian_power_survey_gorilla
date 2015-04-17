@@ -15,4 +15,17 @@ $(document).ready(function() {
     $node = newChoice(choiceCount);
     $target.closest('.choice_form_container').children('.choice_form_list').append($node);
   });
+
+  $('.choice_input').keypress(function(event) {
+    $target = $(event.target)
+    if (event.keyCode == 13) {
+      event.preventDefault();
+      choiceCount++;
+      $node = newChoice(choiceCount);
+      $target.closest('.choice_form_container').children('.choice_form_list').append($node);
+    }
+  });
+
+
+
 });
