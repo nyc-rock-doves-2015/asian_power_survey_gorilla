@@ -1,11 +1,27 @@
 require 'faker'
 
+User.create(name: "John", password: "123");
+
+# create random users
+10.times do
+  user = User.create(name: Faker::Name.name, password: "123")
+end
+
+# create random surveys with questions and choices
 5.times do
-  user = User.create(name: Faker::Name.name, email: Faker::Internet.email, password_digest: "123")
-  20.times do
-    blog = Blog.create(title: Faker::Company.catch_phrase, content: Faker::Lorem.paragraph(4), user_id: user.id)
-    rand(4).times do
-      comment = Comment.create(content: Faker::Lorem.sentence, user_id: (rand(5) + 1), blog_id: blog.id)
-    end
+  survey = Survey.create(title: Faker::Commerce.department, user_id: User.pluck(:id).sample)
+
+  question = Question.create(description: Faker::Company.bs, survey_id: survey.id)
+
+  7.times do
+    Choice.create(description: Faker::Lorem.word, question_id: question.id)
+  end
+end
+
+# have random users take random surveys
+Survey.all.each do |survey|
+  survey.questions.each do |question|
+    choice_id = question.choices.pluck(:id).sample
+    ChoiceUser.create(choice_id: choice_id, user_id: User.pluck(:id).sample)
   end
 end
