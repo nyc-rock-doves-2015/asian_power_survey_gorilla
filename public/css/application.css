@@ -1,7 +1,33 @@
+#signin {
+  background-color: #1295D3;
+  height: 600px;
+}
+
+#signin .well{
+  box-shadow: 5px 5px;
+  position: relative;
+  top: 150px;
+}
+
+#signup {
+  background-color: #1295D3;
+  height: 600px;
+}
+
+#signup .well{
+  box-shadow: 5px 5px;
+  position: relative;
+  top: 150px;
+}
+
 .container {
   font-family: verdana;
   text-align: center;
   top: 100px;
+}
+
+.content {
+  display: inline-block;
 }
 
 .row {
@@ -23,20 +49,40 @@
   text-align: center;
 }
 
-#navbar .well {
-  height: 60px;
+#header {
+  background-color: #1295D3;
+  /*border: 1px solid black;*/
+  height: 120px;
   padding: 0;
 }
 
 #main_brand {
-  font-size: 40px;
+  font-size: 65px;
   font-family: georgia;
-  font-color: black;
   padding: 0;
-  /*border: 1px solid black;*/
+  border: 1px solid black;
   text-align: center;
 }
 
-.sidebar {
+/*.sidebar {
   width: 150px;
+}*/
+
+#main_brand a:link {
+  color: white !important;
+}
+
+#main_brand a:hover {
+  color: white !important;
+  text-decoration: none;
+}
+
+#main_brand a:active {
+  color: white !important;
+  text-decoration: none;
+}
+
+#main_brand a:visited {
+  color: white !important;
+  text-decoration: none;
 }

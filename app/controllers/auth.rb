@@ -1,6 +1,6 @@
 get '/' do
   # if current_user
-    erb :'index_bs'
+    erb :'auth/signin'
   # else
   #   redirect '/signin'
   # end
