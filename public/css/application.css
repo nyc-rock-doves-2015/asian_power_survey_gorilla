@@ -10,3 +10,7 @@
 .btn-sm {
   background-color: #79D7AB;
 }
+
+#user_session_col {
+  text-align: right;
+}

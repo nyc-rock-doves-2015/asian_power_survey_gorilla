@@ -28,11 +28,26 @@
 
   <title></title>
 </head>
+
 <body>
-<div>
-  <header>
-  </header>
-  <%= yield %>
-</div>
+  <div>
+  <nav class=".col-lg-12">
+    <div class='well'>
+      <div class='.col-sm' id='user_session_col'>
+        <% if current_user %>
+          <span>Welcome, <% current_user.name %>! </span>
+          <a href='/signout'>Sign Out</a>
+        <% else %>
+          <a href='/signin'>Sign In</a>
+        <% end %>
+      </div>
+    </div>
+  </nav>
+
+  <div>
+    <header>
+    </header>
+    <%= yield %>
+  </div>
 </body>
 </html>
