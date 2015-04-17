@@ -16,6 +16,8 @@ $(document).ready(function() {
       $node = newChoice(choiceCount);
       $container = $target.closest('.choice_form_container').children('.choice_form_list')
       $container.append($node);
+      $container.children('.choice_add').last().children('.choice_input').focus();
+      choiceCounter($target, choiceCount);
     }
   });
 
