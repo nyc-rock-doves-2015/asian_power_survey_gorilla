@@ -1,0 +1,19 @@
+
+surveys#index
+
+<% @surveys.each do |survey| %>
+  <h2><%= survey.title %></h2>
+  <img src="<%= survey.image %>">
+  <ul>
+  <% survey.questions.each do |question| %>
+    <li>Question: <%= question.description %></li>
+    <li>
+      <ul>
+      <% question.choices.each do |choice| %>
+        <li><%= choice.description %></li>
+      <% end %>
+      </ul>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
