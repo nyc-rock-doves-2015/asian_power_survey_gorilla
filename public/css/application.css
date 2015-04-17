@@ -1,16 +1,42 @@
+.auth_container {
+  position: relative;
+  top: 100px;
+}
 .container {
   font-family: verdana;
   text-align: center;
+  top: 100px;
 }
 
 .row {
-  margin: 10px 0 10px 0;
+  margin: 20px 0 20px 0;
 }
 
-.btn-sm {
+.btn-sm, .btn-lg {
   background-color: #79D7AB;
 }
 
 #user_session_col {
   text-align: right;
+  /*border: 1px solid black;*/
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+#create_new {
+  text-align: center;
+}
+
+#navbar .well {
+  height: 60px;
+  padding: 0;
+}
+
+#main_brand {
+  font-size: 40px;
+  font-family: georgia;
+  padding: 0;
+  /*border: 1px solid black;*/
+  text-align: center;
+
 }

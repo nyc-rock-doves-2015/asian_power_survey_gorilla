@@ -1,3 +1,11 @@
+get '/' do
+  # if current_user
+    erb :'index_bs'
+  # else
+  #   redirect '/signin'
+  # end
+end
+
 get '/signin' do
   erb :'auth/signin'
 end
