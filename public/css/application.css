@@ -1,0 +1,12 @@
+.container {
+  font-family: verdana;
+  text-align: center;
+}
+
+.row {
+  margin: 10px 0 10px 0;
+}
+
+.btn-sm {
+  background-color: #79D7AB;
+}
