@@ -9,7 +9,7 @@ end
 
 # create random surveys with questions and choices
 5.times do
-  survey = Survey.create(title: Faker::Commerce.department, user_id: User.pluck(:id).sample)
+  survey = Survey.create(title: Faker::Commerce.department, user_id: User.pluck(:id).sample, image: Faker::Avatar.image)
 
   question = Question.create(description: Faker::Company.bs, survey_id: survey.id)
 
