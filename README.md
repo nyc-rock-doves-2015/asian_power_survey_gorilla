@@ -21,3 +21,9 @@ Anyone can view results of survey
 Creator can associate an image with survey
 
 Creator can view profile of past surveys that they have posted
+
+![schema_image]('public/img/schema.png')
+
+
+
+
