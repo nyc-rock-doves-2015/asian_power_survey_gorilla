@@ -15,11 +15,11 @@ var getChoiceCount = function(target) {
 }
 
 var questionCounter = function(target, questionCount) {
-  $target.closest('.survey_list_container').children('.survey_form_question_list').children('.total_question_count').attr('value', questionCount);
+  target.closest('.survey_list_container').children('.survey_form_question_list').children('.total_question_count').attr('value', questionCount);
 }
 
 var getQuestionCount = function(target) {
-  return $target.closest('.survey_list_container').children('.survey_form_question_list').children('.total_question_count').attr('value');
+  return target.closest('.survey_list_container').children('.survey_form_question_list').children('.total_question_count').attr('value');
 }
 
 var getQuestionId = function(target) {
