@@ -54,7 +54,7 @@ $(document).ready(function() {
 
     })
 
-    var placeholder = $choice_list.children('.question_pie_chart');
+    var placeholder = $target.closest('.survey_question').children('.question_pie_chart');
 
     $.plot(placeholder, data, {
       series: {
