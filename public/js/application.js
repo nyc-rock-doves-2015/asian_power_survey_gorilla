@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   var survey = new Survey();
 
-  $('.container').on('click', '.addQuestion', function(event){
+  $('#yield').on('click', '.addQuestion', function(event){
     $target = $(event.target)
 
     var questionCount = parseInt(getQuestionCount($target)) + 1;
@@ -13,7 +13,7 @@ $(document).ready(function() {
     $target.closest('.survey_form_container').find('.survey_form_question').last().children('.survey_form_description').focus();
   });
 
-  $('.container').on('keypress', '.choice_form_list', function(event) {
+  $('#yield').on('keypress', '.choice_form_list', function(event) {
     $target = $(event.target)
     if (event.keyCode == 13) {
       event.preventDefault();
@@ -33,9 +33,9 @@ $(document).ready(function() {
     
   })
 
-  $('form').on('click', '.removeChoice', function(event) {
-    $target = $(event.target)
-    $target.closest('.choice_add').remove();
-  });
+  // $('form').on('click', '.removeChoice', function(event) {
+  //   $target = $(event.target)
+  //   $target.closest('.choice_add').remove();
+  // });
 
 });
