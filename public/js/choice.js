@@ -1,4 +1,3 @@
-function Choice(question) {
-  this.question = question;
+function Choice() {
 
 }
