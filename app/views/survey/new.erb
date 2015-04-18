@@ -1,9 +1,12 @@
 <div class="survey_form_container">
   <h2>Create a survey</h2>
-  <form class="survey_form" action="/surveys" method="post">
+  <form class="survey_form" action="/surveys" method="post" enctype="multipart/form-data">
     <div class="survey_form_title ">
       <label>Survey Title:</label>
       <input type="text" name="survey[title]">
+      <br>
+      <label>Image:</label>
+      <input type="file" name="survey[image]">
     </div>
     <div class="survey_list_container">
       <%= erb :'survey/_add_form' %>

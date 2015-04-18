@@ -6,6 +6,8 @@ class Survey < ActiveRecord::Base
   has_many :takers, through: :survey_users, class_name: "User", source: :survey
   has_many :questions
 
+  mount_uploader :image, ImageUploader
+
   before_create :create_link_code
 
   def add_questions(params)

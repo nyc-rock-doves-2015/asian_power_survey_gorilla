@@ -17,6 +17,9 @@ gem 'rake'
 
 gem 'shotgun'
 
+gem 'carrierwave'
+gem 'rmagick'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

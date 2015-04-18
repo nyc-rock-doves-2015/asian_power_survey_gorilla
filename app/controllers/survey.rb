@@ -13,7 +13,7 @@ get '/surveys/:id' do |id|
 end
 
 post '/surveys' do
-  survey = Survey.create(title: params[:survey][:title], user_id: 1)
+  survey = Survey.create(title: params[:survey][:title], user_id: 1, image: params[:survey][:image])
   survey.add_questions(params)
 
   redirect '/surveys'
