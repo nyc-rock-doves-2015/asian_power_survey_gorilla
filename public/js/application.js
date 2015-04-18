@@ -38,4 +38,44 @@ $(document).ready(function() {
   //   $target.closest('.choice_add').remove();
   // });
 
+  var data = [];
+  var series = $('.choice_list li').length;
+
+  $('.choice_list li').each(function(index) {
+    $target = $(this);
+    data[index] = {
+      label: $target.children('.question_choice').html(),
+      data: $target.children('.vote_count').html()
+    }
+    
+  });
+
+
+  var placeholder = $('.question_pie_chart');
+
+  $.plot(placeholder, data, {
+    series: {
+      pie: { 
+        show: true,
+        radius: 3/4,
+        label: {
+          show: true,
+          radius: 3/4,
+          formatter: labelFormatter,
+          background: { 
+            opacity: 0.5,
+            color: "#000"
+          }
+        }
+      }
+    },
+    legend: {
+      show: false
+    }
+  });
+
+  function labelFormatter(label, series) {
+    return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
+  }
+
 });

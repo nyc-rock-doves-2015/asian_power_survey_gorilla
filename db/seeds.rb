@@ -21,7 +21,9 @@ end
 # have random users take random surveys
 Survey.all.each do |survey|
   survey.questions.each do |question|
-    choice_id = question.choices.pluck(:id).sample
-    ChoiceUser.create(choice_id: choice_id, user_id: User.pluck(:id).sample)
+    100.times do
+      choice_id = question.choices.pluck(:id).sample
+      ChoiceUser.create(choice_id: choice_id, user_id: User.pluck(:id).sample)
+    end
   end
 end
