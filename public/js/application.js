@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  //create three initial fields
+
   var survey = new Survey();
 
   $('.container').on('click', '.addQuestion', function(event){
@@ -10,6 +10,7 @@ $(document).ready(function() {
     $node = newQuestion(questionCount);
     $target.closest('.survey_list_container').children('.survey_form_question_list').append($node);
     questionCounter($target, questionCount);
+    $target.closest('.survey_form_container').find('.survey_form_question').last().children('.survey_form_description').focus();
   });
 
   $('.container').on('keypress', '.choice_form_list', function(event) {
