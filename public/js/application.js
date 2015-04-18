@@ -28,6 +28,10 @@ $(document).ready(function() {
     }
   });
 
+  $('.survey_form').on('submit', function(event) {
+    
+  })
+
   $('form').on('click', '.removeChoice', function(event) {
     $target = $(event.target)
     $target.closest('.choice_add').remove();

@@ -1,5 +1,5 @@
 var newQuestion = function(questionCount) {
-  return '<div class="survey_form_question"><label for="question' + questionCount + '">Question ' + questionCount + ': </label><input class="survey_form_description" type="text" name="survey[question' + questionCount + '[description]" id="question' + questionCount + '"><span class="removeQuestion">Remove Question</span><div class="choice_form_container"><input class="total_choice_count" type="hidden" name="survey[question' + questionCount + '][count]" value="1"><div class="choice_form_list">' + newChoice(1) + '</div></div>';
+  return '<div class="survey_form_question"><label for="question' + questionCount + '">Question ' + questionCount + ': </label><input class="survey_form_description" type="text" name="survey[question' + questionCount + '[description]" id="question' + questionCount + '"><span class="removeQuestion">Remove Question</span><div class="choice_form_container"><input class="total_choice_count" type="hidden" name="survey[question' + questionCount + '][count]" value="1"><div class="choice_form_list">' + newChoice(1, 'question' + questionCount) + '</div></div>';
 }
 
 var newChoice = function(choiceCount, questionId) {
