@@ -1,5 +1,4 @@
-function Question(survey) {
-  this.survey = survey;
+function Question() {
   this.choices = [];
 
 }
