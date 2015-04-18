@@ -1,9 +1,6 @@
+
 get '/' do
-  # if current_user
-    erb :'auth/signin'
-  # else
-  #   redirect '/signin'
-  # end
+  erb :index
 end
 
 get '/signin' do
