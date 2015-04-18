@@ -11,9 +11,9 @@ get '/signin' do
 end
 
 post '/signin' do
-  user = User.find(name: params[:name])
+  user = User.find_by_name(params[:name])
 
-  if user & password_valid?(user, params[:password])
+  if user && password_valid?(user, params[:password])
     session_in!(user)
 
     redirect '/'

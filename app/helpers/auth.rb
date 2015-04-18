@@ -1,5 +1,5 @@
 def password_valid?(user, password)
-  user.authenticate(password: password) ? true : false
+  user.authenticate(password) ? true : false
 end
 
 def session_in!(user)
