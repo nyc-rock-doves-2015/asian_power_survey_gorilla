@@ -38,40 +38,45 @@ $(document).ready(function() {
   //   $target.closest('.choice_add').remove();
   // });
 
-  var data = [];
-  var series = $('.choice_list li').length;
 
-  $('.choice_list li').each(function(index) {
-    $target = $(this);
-    data[index] = {
-      label: $target.children('.question_choice').html(),
-      data: $target.children('.vote_count').html()
-    }
-    
-  });
+  $('.question_list li').each(function(index) {
 
+    var data = [];
+    var $choice_list = $(this).closest('.survey_question').children('.choice_list')
+    var series = $choice_list.children('li').length
 
-  var placeholder = $('.question_pie_chart');
+    $choice_list.children('li').each(function(index) {
+      $target = $(this);
+      data[index] = {
+        label: $target.children('.question_choice').html(),
+        data: $target.children('.vote_count').html()
+      }
 
-  $.plot(placeholder, data, {
-    series: {
-      pie: { 
-        show: true,
-        radius: 3/4,
-        label: {
+    })
+
+    var placeholder = $choice_list.children('.question_pie_chart');
+
+    $.plot(placeholder, data, {
+      series: {
+        pie: { 
           show: true,
           radius: 3/4,
-          formatter: labelFormatter,
-          background: { 
-            opacity: 0.5,
-            color: "#000"
+          label: {
+            show: true,
+            radius: 3/4,
+            formatter: labelFormatter,
+            background: { 
+              opacity: 0.5,
+              color: "#000"
+            }
           }
         }
+      },
+      legend: {
+        show: false
       }
-    },
-    legend: {
-      show: false
-    }
+    });
+
   });
 
   function labelFormatter(label, series) {
