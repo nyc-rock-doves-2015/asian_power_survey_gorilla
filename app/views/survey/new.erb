@@ -1,2 +1,20 @@
+<div class="survey_form_container">
+  <h2>Create a survey</h2>
+  <form class="survey_form" action="/surveys" method="post">
+    <div class="survey_form_title ">
+      <label>Survey Title:</label>
+      <input type="text" name="survey[title]">
+    </div>
+    <div class="survey_list_container">
+      <%= erb :'survey/_add_form' %>
 
-surveys#new
+      <div class="survey_form_adder">
+        <span class="addQuestion">Add Question</span>
+      </div>
+    </div>
+    <p>
+      <input type="submit" value="Submit Survey">
+    </p>
+  </form>
+</div>
+
