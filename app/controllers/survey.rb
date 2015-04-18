@@ -14,12 +14,22 @@ get '/surveys/:id' do |id|
 end
 
 post '/surveys' do
-  survey = Survey.create(title: params[:survey][:title], user_id: 1, image: params[:survey][:image])
+  survey = Survey.create(title: params[:survey][:title], user_id: current_user.id, image: params[:survey][:image])
   survey.add_questions(params)
 
   redirect '/surveys'
 end
 
-get '/surveys/:id/results' do
+post '/submit' do
+  survey = Survey.find(params[:survey_id])
+  params.each do |question, choice|
+    ChoiceUser.create(user: current_user, choice_id: choice)
+  end
 
+  redirect "/surveys/#{survey.id}/results"
+end
+
+get '/surveys/:id/results' do |id|
+  @survey = Survey.find(id)
+  erb :'/survey/results'
 end

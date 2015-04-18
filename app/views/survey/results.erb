@@ -1,0 +1,18 @@
+<h2><%= @survey.title %></h2>
+<img src="<%= @survey.image %>">
+<ul class="question_list">
+<% @survey.questions.each do |question| %>
+  <div class="survey_question">
+    <li>Question: <%= question.description %></li>
+      <ul class="choice_list">
+        <% question.choices.each do |choice| %>
+          <li>
+            <div class="question_choice"><%= choice.description %></div>
+            Vote Count: <span class="vote_count"><%= choice.choice_users.count %></span>
+          </li>
+        <% end %>
+      </ul>
+    <div class="question_pie_chart"></div>
+  </div>
+<% end %>
+</ul>
