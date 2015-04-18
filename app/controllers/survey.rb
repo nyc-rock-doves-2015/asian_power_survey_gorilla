@@ -17,7 +17,9 @@ post '/surveys' do
   question = survey.questions.create(description: params[:survey][:question1][:description])
   question.add_choices(params)
 
-  redirect '/surveys'
+
+  "#{params.inspect}"
+  # redirect '/surveys'
 end
 
 get '/surveys/:id/results' do

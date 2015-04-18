@@ -2,14 +2,17 @@ $(document).ready(function() {
   //create three initial fields
   var survey = new Survey();
 
-  $('.addQuestion').on('click', function(event){
+  $('.container').on('click', '.addQuestion', function(event){
     $target = $(event.target)
-    questionCount++;
+
+    var questionCount = parseInt(getQuestionCount($target)) + 1;
+
     $node = newQuestion(questionCount);
-    $target.closest('.survey_form').children('.survey_form_question_list').append($node);
+    $target.closest('.survey_list_container').children('.survey_form_question_list').append($node);
+    questionCounter($target, questionCount)
   });
 
-  $('.choice_form_list').keypress(function(event) {
+  $('.container').on('keypress', '.choice_form_list', function(event) {
     $target = $(event.target)
     if (event.keyCode == 13) {
       event.preventDefault();

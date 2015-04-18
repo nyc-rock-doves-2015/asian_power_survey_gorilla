@@ -5,10 +5,12 @@
       <label>Survey Title:</label>
       <input type="text" name="survey[title]">
     </div>
-    <%= erb :'survey/_add_form' %>
+    <div class="survey_list_container">
+      <%= erb :'survey/_add_form' %>
 
-    <div class="survey_form_adder">
-      <span class="addQuestion">Add Question</span>
+      <div class="survey_form_adder">
+        <span class="addQuestion">Add Question</span>
+      </div>
     </div>
     <p>
       <input type="submit" value="Submit Survey">
