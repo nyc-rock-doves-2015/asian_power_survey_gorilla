@@ -1,23 +1,24 @@
 <div class="survey_form_container">
-  <h2>Create a survey</h2>
   <form class="survey_form" action="/surveys" method="post" enctype="multipart/form-data">
-    <div class="survey_form_title ">
-      <label>Survey Title:</label>
-      <input type="text" name="survey[title]">
-      <br>
-      <label>Image:</label>
-      <input type="file" name="survey[image]">
+    <h2>Create a survey</h2>
+    <div class="survey_form_title">
+      <div class="form-group">
+        <label>Survey Title:</label>
+        <input class="form-control" type="text" name="survey[title]">
+      </div>
+      <div class="form-group">
+        <label>Image:</label>
+        <input type="file" name="survey[image]">
+      </div>
     </div>
     <div class="survey_list_container">
       <%= erb :'survey/_add_form' %>
 
       <div class="survey_form_adder">
-        <span class="addQuestion">Add Question</span>
+        <button type="button" class="addQuestion btn btn-primary btn-sm">Add Question</button>
       </div>
     </div>
-    <p>
-      <input type="submit" value="Submit Survey">
-    </p>
+    <input class="survey_submit btn btn-default" type="submit" value="Submit Survey">
   </form>
 </div>
 
