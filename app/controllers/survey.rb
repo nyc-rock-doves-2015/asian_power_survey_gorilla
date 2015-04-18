@@ -17,9 +17,11 @@ post '/surveys' do
   survey = Survey.create(title: params[:survey][:title], user_id: 1, image: params[:survey][:image])
   survey.add_questions(params)
 
-  redirect '/surveys'
+  redirect survey_url(survey) + "/results"
 end
 
-get '/surveys/:id/results' do
+get '/surveys/:id/results' do |id|
+  @survey = Survey.find(id)
 
+  erb :'/survey/results'
 end
