@@ -78,3 +78,10 @@
   color: white !important;
   text-decoration: none;
 }
+
+.question_pie_chart {
+  width: 500px;
+  height: 450px;
+}
+
+
