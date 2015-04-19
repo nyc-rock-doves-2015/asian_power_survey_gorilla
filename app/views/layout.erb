@@ -47,10 +47,10 @@
             <div id="navbar" class="navbar-collapse collapse">
               <form class="navbar-form navbar-right" action="/signin" method="post">
                 <div class="form-group">
-                  <input type="text" placeholder="name" class="form-control" name="name">
+                  <input type="text" placeholder="name" class="form-control" name="user[name]">
                 </div>
                 <div class="form-group">
-                  <input type="password" placeholder="password" class="form-control" name="password">
+                  <input type="password" placeholder="password" class="form-control" name="user[password]">
                 </div>
                 <button type="submit" class="btn btn-primary">Sign in</button>
                 <a href="/signup" class="btn btn-success">Register</a>
@@ -61,6 +61,15 @@
         </nav>
         <a class="app-name-link" href="/"><i class="fa fa-language fa-4x logo"></i><h3 class="app-name">SURVEY GORILLA</h3></a>
       </div>
+      <% if flash[:error] && !flash[:error].empty? %>
+      <div class="sign-in-error">
+        <div class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+          <%= flash[:error] %>
+        </div>
+      </div>
+      <% end %>
 
       <div class="content-container"><%= yield %></div>
 

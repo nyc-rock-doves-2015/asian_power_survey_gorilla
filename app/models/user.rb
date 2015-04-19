@@ -17,4 +17,13 @@ class User < ActiveRecord::Base
     ""
   end
 
+  def self.authenticate(params)
+    user = User.find_by(name: params[:name])
+    if user && user.authenticate(params[:password])
+      return ""
+    else
+      return "User or password is incorrect"
+    end
+  end
+
 end

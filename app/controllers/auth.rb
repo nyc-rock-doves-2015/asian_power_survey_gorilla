@@ -14,17 +14,13 @@ get '/signin' do
 end
 
 post '/signin' do
-  user = User.find_by(name: params[:name])
-
-  if user && password_valid?(user, params[:password])
-    session_in!(user)
-
-    redirect '/'
-  else
-    set_error!("Incorrect username and/or password.")
-    get_error
-
+  flash[:error] = User.authenticate(params[:user])
+  if !blank(flash.next[:error])
     redirect '/signin'
+  else
+    user = User.find_by(name: params[:user][:name])
+    session_in!(user)
+    redirect '/'
   end
 end
 

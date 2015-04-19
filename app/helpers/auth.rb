@@ -1,6 +1,3 @@
-def password_valid?(user, password)
-  user.authenticate(password) ? true : false
-end
 
 def session_in!(user)
   session[:user_id] = user.id
