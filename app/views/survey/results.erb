@@ -1,18 +1,24 @@
-<h2><%= @survey.title %></h2>
-<img src="<%= @survey.image %>">
-<ul class="question_list">
-<% @survey.questions.each do |question| %>
-  <div class="survey_question">
-    <li>Question: <%= question.description %></li>
-      <ul class="choice_list">
-        <% question.choices.each do |choice| %>
-          <li>
-            <div class="question_choice"><%= choice.description %></div>
-            Vote Count: <span class="vote_count"><%= choice.choice_users.count %></span>
-          </li>
-        <% end %>
-      </ul>
-    <div class="question_pie_chart"></div>
-  </div>
-<% end %>
-</ul>
+<div class="survey_results">
+  <h2><%= @survey.title %></h2>
+  <img src="<%= @survey.image %>">
+  <ul class="question_list list-unstyled list-group">
+  <% @survey.questions.each do |question| %>
+    <div class="survey_question">
+      <li class="list-group-item list-group-item-info"><h3>Question: <%= question.description %></h3></li>
+      <div class="row">
+        <ul class="choice_list list-unstyled col-md-4 list-group">
+          <% question.choices.each do |choice| %>
+            <li class="list-group-item">
+              <div class="choice_display">
+                <span class="question_choice"><%= choice.description %></span> 
+                <span class="badge"><span class="vote_count"><%= choice.choice_users.count %></span> votes</span>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+        <div class="question_pie_chart col-md-4"></div>
+      </li>
+    </div>
+  <% end %>
+  </ul>
+</div>

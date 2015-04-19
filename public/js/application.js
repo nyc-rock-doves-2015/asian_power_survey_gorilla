@@ -29,38 +29,29 @@ $(document).ready(function() {
     }
   });
 
-  $('.survey_form').on('submit', function(event) {
-    
-  })
-
-  // $('form').on('click', '.removeChoice', function(event) {
-  //   $target = $(event.target)
-  //   $target.closest('.choice_add').remove();
-  // });
-
-
   $('.question_list li').each(function(index) {
 
     var data = [];
-    var $choice_list = $(this).closest('.survey_question').children('.choice_list')
+    var $choice_list = $(this).closest('.survey_question').children('.row').children('.choice_list')
     var series = $choice_list.children('li').length
 
     $choice_list.children('li').each(function(index) {
       $target = $(this);
+      $choice = $target.children('.choice_display')
       data[index] = {
-        label: $target.children('.question_choice').html(),
-        data: $target.children('.vote_count').html()
+        label: $choice.children('.question_choice').html(),
+        data: $choice.children('.badge').children('.vote_count').html()
       }
 
     })
 
-    var placeholder = $target.closest('.survey_question').children('.question_pie_chart');
+    var placeholder = $target.closest('.survey_question').children('.row').children('.question_pie_chart');
 
     $.plot(placeholder, data, {
       series: {
         pie: { 
           show: true,
-          radius: 3/4,
+          radius: 1,
           label: {
             show: true,
             radius: 3/4,
