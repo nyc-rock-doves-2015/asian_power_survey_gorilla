@@ -1,6 +1,10 @@
 
 get '/' do
-  erb :index
+  if current_user
+    erb :index
+  else
+    redirect '/signin'
+  end
 end
 
 get '/signin' do

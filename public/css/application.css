@@ -1,87 +1,37 @@
-.navbar {
-  margin-bottom: 0px !important;
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-#signin {
-  background-color: #1295D3;
-  height: 600px;
-  padding-top: 0;
+.header {
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e5e5e5;
 }
 
-#signin .well{
-  box-shadow: 5px 8px;
+nav > ul > li {
+  font-weight: bold;
+}
+
+.app-name {
+  color: #000;
+}
+
+.bigass-gorilla-container {
+  width: 750px;
+  height: 754px;
+  margin: 0 auto;
+}
+
+.welcome-user {
   position: relative;
-  top: 150px;
+  display: block;
+  padding: 10px 15px;
 }
 
-#signup {
-  background-color: #1295D3;
-  height: 600px;
+.content-container {
+  /*margin: 20px;*/
 }
 
-#signup .well{
-  box-shadow: 5px 8px;
-  position: relative;
-  top: 150px;
-}
-
-.container {
-  font-family: verdana;
-  text-align: center;
-}
-
-.content {
-  display: inline-block;
-}
-
-.row {
-  margin: 20px 0 20px 0;
-}
-
-.btn-sm, .btn-lg {
-  background-color: #79D7AB;
-}
-
-#user_session_col {
-  text-align: right;
-  /*border: 1px solid black;*/
-  margin-top: 15px;
-  font-size: 14px;
-}
-
-#create_new {
-  text-align: center;
-}
-
-#header {
-  background-color: #1295D3;
-  /*border: 1px solid black;*/
-  height: 120px;
-  padding: 0;
-}
-
-#main_brand a:link {
-  color: white !important;
-}
-
-#main_brand a:hover {
-  color: white !important;
-  text-decoration: none;
-}
-
-#main_brand a:active {
-  color: white !important;
-  text-decoration: none;
-}
-
-#main_brand a:visited {
-  color: white !important;
-  text-decoration: none;
-}
-
-.question_pie_chart {
-  width: 500px;
-  height: 450px;
-}
 
 
