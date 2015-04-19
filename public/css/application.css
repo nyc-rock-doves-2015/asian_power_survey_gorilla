@@ -150,3 +150,36 @@ nav > ul > li {
 .question_list_item {
   right: 20px;
 }
+
+/* Sign Up Container */
+
+.sign-up-container {
+  margin-top: 50px;
+  background: #fff;
+}
+
+.sign-up-header {
+  margin: 10px;
+}
+
+.sign-up-form {
+  padding: 10px;
+  border-radius: 2%;
+  text-align: center;
+  background: #ccc;
+  width: 500px;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sign-up-form-item {
+  margin: 5px 0 5px 0;
+}
+
+.sign-up-error {
+  width: 500px;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}

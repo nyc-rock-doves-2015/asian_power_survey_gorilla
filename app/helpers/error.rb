@@ -1,3 +1,5 @@
+require 'sinatra/flash'
+
 def set_error!(msg)
   flash[:error] = msg
 end

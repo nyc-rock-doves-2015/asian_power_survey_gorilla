@@ -20,3 +20,7 @@ def bounce_guest!
     redirect '/signin'
   end
 end
+
+def blank(string)
+  string == "" || string.nil?
+end
