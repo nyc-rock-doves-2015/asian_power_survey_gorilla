@@ -36,7 +36,7 @@ nav > ul > li {
 /* Survey Results */
 
 .question_pie_chart {
-  /*width: 100px;*/
+  margin-top: 20px;
   height: 300px;
 }
 
@@ -49,8 +49,11 @@ nav > ul > li {
 }
 
 .survey_results {
-  width: 90%;
   margin: auto;
+}
+
+.results_row {
+  margin: 0;
 }
 
 /* New Survey Form */

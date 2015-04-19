@@ -1,11 +1,11 @@
 <div class="survey_results">
-  <h2><%= @survey.title %></h2>
-  <img src="<%= @survey.image %>">
+  <h2 class="text-center"><%= @survey.title %></h2>
+  <img class="center-block" src="<%= @survey.image %>">
   <ul class="question_list list-unstyled list-group">
   <% @survey.questions.each do |question| %>
     <div class="survey_question">
       <li class="list-group-item list-group-item-info"><h3>Question: <%= question.description %></h3></li>
-      <div class="row">
+      <div class="results_row row">
         <ul class="choice_list list-unstyled col-md-4 list-group">
           <% question.choices.each do |choice| %>
             <li class="list-group-item">
