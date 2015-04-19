@@ -79,9 +79,15 @@
   text-decoration: none;
 }
 
+/* Survey Results */
+
 .question_pie_chart {
-  width: 500px;
-  height: 450px;
+  width: 100px;
+  height: 300px;
+}
+
+.question_choice {
+  font-size: 14pt;
 }
 
 /* New Survey Form */
