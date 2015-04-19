@@ -40,7 +40,7 @@ $(document).ready(function() {
       $choice = $target.children('.choice_display')
       data[index] = {
         label: $choice.children('.question_choice').html(),
-        data: $choice.children('.vote_count').html()
+        data: $choice.children('.badge').children('.vote_count').html()
       }
 
     })
@@ -51,7 +51,7 @@ $(document).ready(function() {
       series: {
         pie: { 
           show: true,
-          radius: 3/4,
+          radius: 1,
           label: {
             show: true,
             radius: 3/4,

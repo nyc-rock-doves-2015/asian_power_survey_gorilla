@@ -90,6 +90,10 @@
   font-size: 14pt;
 }
 
+.badge {
+  float: right;
+}
+
 /* New Survey Form */
 
 .survey_form_container {
