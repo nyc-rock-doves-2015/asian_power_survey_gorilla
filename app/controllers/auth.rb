@@ -12,7 +12,7 @@ get '/signin' do
 end
 
 post '/signin' do
-  user = User.find_by_name(params[:name])
+  user = User.find_by(name: params[:name])
 
   if user && password_valid?(user, params[:password])
     session_in!(user)
@@ -33,6 +33,7 @@ end
 post '/signup' do
   user = User.create(params[:user])
   if user.id
+    session_in!(user)
     redirect '/'
   else
     set_error!("Username already exists or passwords do not match.")
