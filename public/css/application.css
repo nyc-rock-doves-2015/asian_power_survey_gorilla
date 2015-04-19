@@ -130,3 +130,14 @@
 .choice_form_list {
   margin-top: 10px;
 }
+
+/* Take Survey Form */
+
+.survey_fill_out {
+  width: 90%;
+  margin: auto;
+}
+
+.question_list_item {
+  right: 20px;
+}

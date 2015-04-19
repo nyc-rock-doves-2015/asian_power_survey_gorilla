@@ -1,16 +1,20 @@
-<h2><%= @survey.title %></h2>
-<img src="<%= @survey.image %>">
-<ul class="question_list">
-<form class="survey_form" action="/submit" method="POST">
-  <input type="hidden" name="survey_id" value="<%= @survey.id %>">
-  <% @survey.questions.each do |question| %>
-    <div class="survey_question">
-      <li>Question: <%= question.description %></li>
-      <% question.choices.each do |choice| %>
-        <input type="radio" name="<%= question.id %>" value="<%= choice.id %>"> <%= choice.description %><br>
-      <% end %>
-    </div>
-  <% end %>
-  <input type="submit">
-</form>
-</ul>
+<div class="survey_fill_out">
+  <h2><%= @survey.title %></h2>
+  <img src="<%= @survey.image %>">
+  <ul class="question_list list-unstyled">
+  <form class="survey_form" action="/submit" method="POST">
+    <input type="hidden" name="survey_id" value="<%= @survey.id %>">
+    <% @survey.questions.each do |question| %>
+      <div class="survey_question">
+        <li><h3>Question: <%= question.description %></h3></li>
+        <% question.choices.each do |choice| %>
+          <div class="radio">
+            <input type="radio" name="<%= question.id %>" value="<%= choice.id %>"> <%= choice.description %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <input class="survey_submit btn btn-success" type="submit">
+  </form>
+  </ul>
+</div>
