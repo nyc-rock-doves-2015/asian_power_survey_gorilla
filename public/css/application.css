@@ -17,6 +17,8 @@ nav > ul > li {
   color: #000;
 }
 
+/* Landing page */
+
 .bigass-gorilla-container {
   width: 750px;
   height: 754px;
@@ -31,6 +33,27 @@ nav > ul > li {
 
 .content-container {
   /*margin: 20px;*/
+}
+
+/* Homepage */
+
+.homepage-container {
+  margin: 0 auto;
+  max-width: 850px;
+}
+
+.surveys-taken-container {
+  width: 400px;
+  margin-right: 40px;
+}
+
+.surveys-created-container {
+  width: 400px;
+  margin-left: 40px;
+}
+
+.thumbnail:hover {
+  background: #eee;
 }
 
 /* Survey Results */

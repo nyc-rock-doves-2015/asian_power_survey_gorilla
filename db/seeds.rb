@@ -1,6 +1,6 @@
 require 'faker'
 
-User.create(name: "John", password: "123");
+john = User.create(name: "John", password: "123");
 
 # create random users
 10.times do
@@ -13,6 +13,19 @@ seed_image_idx = 0
 # create random surveys with questions and choices
 5.times do
   survey = Survey.create(title: Faker::Commerce.department, user_id: User.pluck(:id).sample, image: open(seed_images[seed_image_idx]))
+
+  seed_image_idx += 1
+
+  question = Question.create(description: Faker::Company.bs, survey_id: survey.id)
+
+  7.times do
+    Choice.create(description: Faker::Lorem.word, question_id: question.id)
+  end
+end
+
+# surveys created by John
+4.times do
+  survey = Survey.create(title: Faker::Commerce.department, user_id: User.find_by_name('John').id, image: open(seed_images[seed_image_idx]))
 
   seed_image_idx += 1
 
@@ -47,3 +60,4 @@ Survey.all.each do |survey|
     end
   end
 end
+
