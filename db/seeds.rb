@@ -7,9 +7,14 @@ User.create(name: "John", password: "123");
   user = User.create(name: Faker::Name.name, password: "123")
 end
 
+seed_images = Dir["db/seed_img/*"]
+seed_image_idx = 0
+
 # create random surveys with questions and choices
 5.times do
-  survey = Survey.create(title: Faker::Commerce.department, user_id: User.pluck(:id).sample, image: Faker::Avatar.image)
+  survey = Survey.create(title: Faker::Commerce.department, user_id: User.pluck(:id).sample, image: open(seed_images[seed_image_idx]))
+
+  seed_image_idx += 1
 
   question = Question.create(description: Faker::Company.bs, survey_id: survey.id)
 
@@ -19,7 +24,9 @@ end
 end
 
 5.times do
-  survey = Survey.create(title: Faker::Commerce.department, user_id: User.pluck(:id).sample, image: Faker::Avatar.image)
+  survey = Survey.create(title: Faker::Commerce.department, user_id: User.pluck(:id).sample, image: open(seed_images[seed_image_idx]))
+
+  seed_image_idx += 1
 
   4.times do
     question = Question.create(description: Faker::Company.bs, survey_id: survey.id)
