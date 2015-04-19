@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
   $('.content-container').on('click', '.addQuestion', function(event) {
     var $target = $(event.target)
 
@@ -15,7 +19,7 @@ $(document).ready(function() {
     $target = $(event.target)
     if (event.keyCode == 13) {
       event.preventDefault();
-      
+
       var choiceCount = parseInt(getChoiceCount($target)) + 1;
       var questionId = getQuestionId($target);
 
@@ -26,12 +30,6 @@ $(document).ready(function() {
       choiceCounter($target, choiceCount);
     }
   });
-
-  $('.link_code_copy').on('click', function(event) {
-    var $target = $(event.target);
-    var link = $target.closest('.survey_results_link').children('.link_input').val();
-    copyToClipboard(link);
-  })
 
   $('.question_list li').each(function(index) {
 
@@ -53,14 +51,14 @@ $(document).ready(function() {
 
     $.plot(placeholder, data, {
       series: {
-        pie: { 
+        pie: {
           show: true,
           radius: 1,
           label: {
             show: true,
             radius: 3/4,
             formatter: labelFormatter,
-            background: { 
+            background: {
               opacity: 0.5,
               color: "#000"
             }
