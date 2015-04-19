@@ -28,8 +28,12 @@ end
 
 post '/submit' do
   survey = Survey.find(params[:survey_id])
-  params.each do |question, choice|
-    ChoiceUser.create(user: current_user, choice_id: choice)
+  if survey.takers.include?(current_user)
+    flash[:error] = "You have already taken this survey"
+  else
+    params.each do |question, choice|
+      ChoiceUser.create(user: current_user, choice_id: choice)
+    end
   end
 
   redirect "/surveys/#{survey.id}/results"

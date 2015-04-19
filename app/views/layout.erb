@@ -61,15 +61,6 @@
         </nav>
         <a class="app-name-link" href="/"><i class="fa fa-language fa-4x logo"></i><h3 class="app-name">SURVEY GORILLA</h3></a>
       </div>
-      <% if flash[:error] && !flash[:error].empty? %>
-      <div class="sign-in-error">
-        <div class="alert alert-danger" role="alert">
-          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-          <span class="sr-only">Error:</span>
-          <%= flash[:error] %>
-        </div>
-      </div>
-      <% end %>
 
       <div class="content-container"><%= yield %></div>
 

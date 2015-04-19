@@ -1,4 +1,11 @@
 <div class="survey_results">
+  <% if flash[:error]  && !flash[:error].empty? %>
+    <div class="survey_error alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      <%= flash[:error] %>
+    </div>
+  <% end %>
   <h2 class="text-center"><%= @survey.title %></h2>
   <img class="center-block survey_image" src="<%= @survey.image %>">
   <% if @survey.creator == current_user %>

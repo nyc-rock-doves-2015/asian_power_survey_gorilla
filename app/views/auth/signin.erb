@@ -1,4 +1,12 @@
-
+<% if flash[:error] && !flash[:error].empty? %>
+<div class="sign-in-error">
+  <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    <%= flash[:error] %>
+  </div>
+</div>
+<% end %>
 <div class="bigass-gorilla-container">
   <img class="bigass-gorilla" src="img/gorilla.png">
 </div>
