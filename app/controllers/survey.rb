@@ -1,7 +1,12 @@
 
 get '/surveys' do
-  @survey = Survey.find_by(link_code: params[:link])
-  erb :'survey/show'
+  if current_user.nil?
+    flash[:error] = "You must sign in first"
+    redirect '/signin'
+  else
+    @survey = Survey.find_by(link_code: params[:link])
+    erb :'survey/show'
+  end
 end
 
 get '/surveys/new' do
