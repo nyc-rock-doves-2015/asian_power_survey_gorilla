@@ -17,6 +17,10 @@ nav > ul > li {
   color: #000;
 }
 
+.app-name-link:hover {
+  text-decoration: none;
+}
+
 /* Landing page */
 
 .bigass-gorilla-container {
