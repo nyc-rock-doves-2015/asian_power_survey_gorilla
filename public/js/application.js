@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   var survey = new Survey();
 
-  $('#yield').on('click', '.addQuestion', function(event){
+  $('.content-container').on('click', '.addQuestion', function(event){
     $target = $(event.target)
 
     var questionCount = parseInt(getQuestionCount($target)) + 1;
@@ -13,7 +13,7 @@ $(document).ready(function() {
     $target.closest('.survey_form_container').find('.survey_form_question').last().children('.survey_form_description').focus();
   });
 
-  $('#yield').on('keypress', '.choice_form_list', function(event) {
+  $('.content-container').on('keypress', '.choice_form_list', function(event) {
     $target = $(event.target)
     if (event.keyCode == 13) {
       event.preventDefault();
