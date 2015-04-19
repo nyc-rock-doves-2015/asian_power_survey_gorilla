@@ -1,6 +1,11 @@
 <div class="survey_form_container jumbotron">
   <form class="survey_form" action="/surveys" method="post" enctype="multipart/form-data">
     <h2>Create New Survey</h2>
+    <div class="alert alert-warning" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      You have an empty choice field
+    </div>
     <div class="survey_form_title">
       <div class="form-group">
         <label>Survey Title:</label>

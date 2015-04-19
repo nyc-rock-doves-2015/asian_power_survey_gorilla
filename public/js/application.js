@@ -1,9 +1,14 @@
 $(document).ready(function() {
 
+  $('.alert-warning').hide();
+
   $('.content-container').on('blur', '.choice_input', function(event) {
     $target = $(event.target)
     if (!$target.val() ) {
-      console.log($target);
+      $('.alert-warning').show();
+    }
+    else {
+      $('.alert-warning').hide();
     }
   })
 
