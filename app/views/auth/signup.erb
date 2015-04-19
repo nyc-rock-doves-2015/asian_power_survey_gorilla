@@ -1,30 +1,44 @@
-<div id='signup'>
-  <div class='container'>
-    <div class='col-md-4 col-md-offset-4'>
-      <div class='well'>
-        <h3><strong>Create Account</strong></h3>
-
-        <form action='/signup' method='post'>
-
-          <div class='row'>
-            <input type='text' name='user[name]' placeholder='Username'>
-          </div>
-
-          <div class='row'>
-            <input type='password' name='user[password]' placeholder='Password'>
-          </div>
-
-          <div class='row'>
-            <input type='password' name='user[password_confirmation]' placeholder='Confirm Password'>
-          </div>
-
-          <div class='row'>
-            <input class='btn-sm' type='submit' value='Create'>
-          </div>
-
-        </form>
-
-      </div>
+<% if flash[:error]  && !flash[:error].empty? %>
+  <div class="sign-up-error">
+    <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      <%= flash[:error] %>
     </div>
+  </div>
+<% end %>
+
+<div class="sign-up-container">
+  <div class="sign-up-form">
+    <h3 class="sign-up-header text-center">Register</h3>
+
+    <form class="form-horizontal" action="/signup" method="POST">
+      <div class="container-fluid text-left">
+        <div class="form-group form-group-lg">
+          <label class="col-sm-5 control-label" for="name">Name:</label>
+          <div class="col-sm-7">
+            <input class="form-control" type="text" name="user[name]" id="name">
+          </div>
+        </div>
+        <div class="form-group form-group-lg">
+          <label class="col-sm-5 control-label" for="password">Password:</label>
+          <div class="col-sm-7">
+            <input class="form-control" type="password" name="user[password]" id="password">
+          </div>
+        </div>
+        <div class="form-group form-group-lg">
+          <label class="col-sm-5 control-label" for="password-confirm">Password Confirmation:</label>
+          <div class="col-sm-7">
+            <input class="form-control" type="password" name="user[password_confirmation]" id="password-confirm">
+          </div>
+        </div>
+        <div class="form-group form-group-lg">
+          <div class="col-sm-5">&nbsp;</div>
+          <div class="col-sm-7">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </div>

@@ -14,17 +14,13 @@ get '/signin' do
 end
 
 post '/signin' do
-  user = User.find_by(name: params[:name])
-
-  if user && password_valid?(user, params[:password])
-    session_in!(user)
-
-    redirect '/'
-  else
-    set_error!("Incorrect username and/or password.")
-    get_error
-
+  flash[:error] = User.authenticate(params[:user])
+  if !blank(flash.next[:error])
     redirect '/signin'
+  else
+    user = User.find_by(name: params[:user][:name])
+    session_in!(user)
+    redirect '/'
   end
 end
 
@@ -33,14 +29,12 @@ get '/signup' do
 end
 
 post '/signup' do
-  user = User.create(params[:user])
-  if user.id
-    session_in!(user)
-    redirect '/'
+  flash[:error] = User.validate_signup(params[:user])
+  if !blank(flash.next[:error])
+    redirect '/signup'
   else
-    set_error!("Username already exists or passwords do not match.")
-    get_error
-
+    user = User.create(params[:user])
+    session_in!(user)
     redirect '/'
   end
 end
@@ -48,6 +42,5 @@ end
 
 get '/signout' do
   session_out!
-
   redirect '/'
 end

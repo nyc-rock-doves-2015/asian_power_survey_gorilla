@@ -6,7 +6,9 @@ class Question < ActiveRecord::Base
     count = params[:survey][question_key][:count].to_i
     count.times do |i|
       key = "choice#{i + 1}".to_sym
-      choices.create(description: params[:survey][question_key][key])
+      description = params[:survey][question_key][key]
+      next if description == ""
+      choices.create(description: description)
     end
   end
 

@@ -10,4 +10,20 @@ class User < ActiveRecord::Base
   has_many :surveys_created, class_name: "Survey", foreign_key: :user_id
 
   validates :name, uniqueness: true
+
+  def self.validate_signup(params)
+    return "Username already exists" if User.find_by(name: params[:name])
+    return "Password does not match confirmation." if params[:password] != params[:password_confirmation]
+    ""
+  end
+
+  def self.authenticate(params)
+    user = User.find_by(name: params[:name])
+    if user && user.authenticate(params[:password])
+      return ""
+    else
+      return "User or password is incorrect"
+    end
+  end
+
 end

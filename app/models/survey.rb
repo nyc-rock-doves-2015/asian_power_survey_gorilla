@@ -3,7 +3,7 @@ require 'securerandom'
 class Survey < ActiveRecord::Base
   belongs_to :creator, class_name: "User", foreign_key: :user_id
   has_many :survey_users
-  has_many :takers, through: :survey_users, class_name: "User", source: :survey
+  has_many :takers, through: :survey_users, class_name: "User", source: :user
   has_many :questions
 
   mount_uploader :image, ImageUploader
@@ -14,7 +14,9 @@ class Survey < ActiveRecord::Base
     count = params[:survey][:count].to_i
     count.times do |i|
       key = "question#{i + 1}".to_sym
-      question = questions.create(description: params[:survey][key][:description])
+      description = params[:survey][key][:description]
+      next if description == ""
+      question = questions.create(description: description)
       question.add_choices(params, key)
     end
   end

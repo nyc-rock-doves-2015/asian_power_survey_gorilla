@@ -1,6 +1,21 @@
 <div class="survey_results">
+  <% if flash[:error]  && !flash[:error].empty? %>
+    <div class="survey_error alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      <%= flash[:error] %>
+    </div>
+  <% end %>
   <h2 class="text-center"><%= @survey.title %></h2>
-  <img class="center-block" src="<%= @survey.image %>">
+  <img class="center-block survey_image" src="<%= @survey.image %>">
+  <% if @survey.creator == current_user %>
+    <div class="input-group survey_results_link col-md-4 col-md-offset-4">
+      <input type="text" class="form-control link_input" value="localhost:9393/surveys?link=<%= @survey.link_code %>">
+      <span class="input-group-btn">
+        <button class="btn btn-default link_code_copy" type="button">Copy</button>
+      </span>
+    </div>
+  <% end %>  
   <ul class="question_list list-unstyled list-group">
   <% @survey.questions.each do |question| %>
     <div class="survey_question">
@@ -16,7 +31,7 @@
             </li>
           <% end %>
         </ul>
-        <div class="question_pie_chart col-md-4"></div>
+        <div class="question_pie_chart col-md-4 col-md-offset-2"></div>
       </li>
     </div>
   <% end %>

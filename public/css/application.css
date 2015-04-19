@@ -62,6 +62,11 @@ nav > ul > li {
 
 /* Survey Results */
 
+.survey_results_link {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .question_pie_chart {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -96,7 +101,7 @@ nav > ul > li {
 }
 
 .choice_input {
-  width: 80%;
+  width: 74%;
   margin-left: 1%;
   height: 34px;
   padding: 6px 2px;
@@ -118,8 +123,14 @@ nav > ul > li {
   margin-left: .25%;
 }
 
-.choice_label {
-  width: 12%;
+.survey_warning {
+  width: 70%;
+  margin: auto;
+}
+
+.survey_error {
+  width: 70%;
+  margin: auto;
 }
 
 .survey_submit {
@@ -132,11 +143,43 @@ nav > ul > li {
 
 /* Take Survey Form */
 
-.survey_fill_out {
-  width: 90%;
-  margin: auto;
+.survey_image {
+  margin-bottom: 20px;
 }
 
 .question_list_item {
   right: 20px;
+}
+
+/* Sign Up Container */
+
+.sign-up-container {
+  margin-top: 50px;
+  background: #fff;
+}
+
+.sign-up-header {
+  margin: 10px;
+}
+
+.sign-up-form {
+  padding: 10px;
+  border-radius: 2%;
+  text-align: center;
+  background: #ccc;
+  width: 500px;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sign-up-form-item {
+  margin: 5px 0 5px 0;
+}
+
+.sign-up-error {
+  width: 500px;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
 }

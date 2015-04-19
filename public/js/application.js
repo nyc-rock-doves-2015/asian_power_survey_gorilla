@@ -1,13 +1,11 @@
 $(document).ready(function() {
 
-  var survey = new Survey();
-
-  $('.content-container').on('click', '.addQuestion', function(event){
-    $target = $(event.target)
+  $('.content-container').on('click', '.addQuestion', function(event) {
+    var $target = $(event.target)
 
     var questionCount = parseInt(getQuestionCount($target)) + 1;
 
-    $node = newQuestion(questionCount);
+    var $node = newQuestion(questionCount);
     $target.closest('.survey_list_container').children('.survey_form_question_list').append($node);
     questionCounter($target, questionCount);
     $target.closest('.survey_form_container').find('.survey_form_question').last().children('.survey_form_description').focus();
@@ -21,13 +19,19 @@ $(document).ready(function() {
       var choiceCount = parseInt(getChoiceCount($target)) + 1;
       var questionId = getQuestionId($target);
 
-      $node = newChoice(choiceCount, questionId);
-      $container = $target.closest('.choice_form_container').children('.choice_form_list')
+      var $node = newChoice(choiceCount, questionId);
+      var $container = $target.closest('.choice_form_container').children('.choice_form_list')
       $container.append($node);
       $container.children('.choice_add').last().children('.choice_input').focus();
       choiceCounter($target, choiceCount);
     }
   });
+
+  $('.link_code_copy').on('click', function(event) {
+    var $target = $(event.target);
+    var link = $target.closest('.survey_results_link').children('.link_input').val();
+    copyToClipboard(link);
+  })
 
   $('.question_list li').each(function(index) {
 
@@ -36,8 +40,8 @@ $(document).ready(function() {
     var series = $choice_list.children('li').length
 
     $choice_list.children('li').each(function(index) {
-      $target = $(this);
-      $choice = $target.children('.choice_display')
+      var $target = $(this);
+      var $choice = $target.children('.choice_display')
       data[index] = {
         label: $choice.children('.question_choice').html(),
         data: $choice.children('.badge').children('.vote_count').html()
@@ -45,7 +49,7 @@ $(document).ready(function() {
 
     })
 
-    var placeholder = $target.closest('.survey_question').children('.row').children('.question_pie_chart');
+    var placeholder = $(this).closest('.survey_question').children('.row').children('.question_pie_chart');
 
     $.plot(placeholder, data, {
       series: {
@@ -69,9 +73,5 @@ $(document).ready(function() {
     });
 
   });
-
-  function labelFormatter(label, series) {
-    return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
-  }
 
 });

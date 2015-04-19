@@ -1,6 +1,6 @@
 <div class="survey_fill_out">
   <h2 class="text-center"><%= @survey.title %></h2>
-  <img class="center-block" src="<%= @survey.image %>">
+  <img class="center-block survey_image" src="<%= @survey.image %>">
   <ul class="question_list list-unstyled">
   <form class="survey_form" action="/submit" method="POST">
     <input type="hidden" name="survey_id" value="<%= @survey.id %>">

@@ -1,10 +1,17 @@
-<div class="survey_form_container">
+<div class="survey_form_container jumbotron">
+  <% if flash[:error]  && !flash[:error].empty? %>
+    <div class="survey_error alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      <%= flash[:error] %>
+    </div>
+  <% end %>
   <form class="survey_form" action="/surveys" method="post" enctype="multipart/form-data">
     <h2>Create New Survey</h2>
     <div class="survey_form_title">
       <div class="form-group">
         <label>Survey Title:</label>
-        <input class="form-control" type="text" name="survey[title]">
+        <input class="form-control new_input" type="text" name="survey[title]">
       </div>
       <div class="form-group">
         <label>Image:</label>
@@ -18,7 +25,7 @@
         <button type="button" class="addQuestion btn btn-primary btn-sm">Add Question</button>
       </div>
     </div>
-    <input class="survey_submit btn btn-default" type="submit" value="Submit Survey">
+    <input class="survey_submit btn btn-success" type="submit" value="Submit Survey">
   </form>
 </div>
 
