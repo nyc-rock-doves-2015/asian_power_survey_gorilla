@@ -1,6 +1,8 @@
 
 get '/' do
   if current_user
+    @surveys_taken = current_user.surveys_taken
+    @surveys_created = current_user.surveys_created
     erb :index
   else
     redirect '/signin'
