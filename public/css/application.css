@@ -82,7 +82,7 @@
 /* Survey Results */
 
 .question_pie_chart {
-  width: 100px;
+  /*width: 100px;*/
   height: 300px;
 }
 
@@ -92,6 +92,11 @@
 
 .badge {
   float: right;
+}
+
+.survey_results {
+  width: 90%;
+  margin: auto;
 }
 
 /* New Survey Form */

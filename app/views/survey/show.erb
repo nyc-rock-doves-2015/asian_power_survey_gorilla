@@ -1,20 +1,25 @@
 <div class="survey_fill_out">
-  <h2><%= @survey.title %></h2>
-  <img src="<%= @survey.image %>">
+  <h2 class="text-center"><%= @survey.title %></h2>
+  <img class="center-block" src="<%= @survey.image %>">
   <ul class="question_list list-unstyled">
   <form class="survey_form" action="/submit" method="POST">
     <input type="hidden" name="survey_id" value="<%= @survey.id %>">
     <% @survey.questions.each do |question| %>
       <div class="survey_question">
-        <li><h3>Question: <%= question.description %></h3></li>
-        <% question.choices.each do |choice| %>
-          <div class="radio">
-            <input type="radio" name="<%= question.id %>" value="<%= choice.id %>"> <%= choice.description %>
-          </div>
-        <% end %>
+        <li class="list-group-item list-group-item-info"><h3>Question: <%= question.description %></h3></li>
+        <ul class="choice_list list-unstyled list-group">
+          <% question.choices.each do |choice| %>
+            <li class="list-group-item">
+              <div class="input-group">
+                <input type="radio" name="<%= question.id %>" value="<%= choice.id %>">
+                <%= choice.description %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
       </div>
     <% end %>
-    <input class="survey_submit btn btn-success" type="submit">
+    <input class="btn btn-success" type="submit">
   </form>
   </ul>
 </div>
