@@ -1,8 +1,13 @@
 $(document).ready(function() {
 
-  var survey = new Survey();
+  $('.content-container').on('blur', '.choice_input', function(event) {
+    $target = $(event.target)
+    if (!$target.val() ) {
+      console.log($target);
+    }
+  })
 
-  $('.content-container').on('click', '.addQuestion', function(event){
+  $('.content-container').on('click', '.addQuestion', function(event) {
     $target = $(event.target)
 
     var questionCount = parseInt(getQuestionCount($target)) + 1;

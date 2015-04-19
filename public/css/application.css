@@ -69,7 +69,7 @@ nav > ul > li {
 }
 
 .choice_input {
-  width: 80%;
+  width: 74%;
   margin-left: 1%;
   height: 34px;
   padding: 6px 2px;
@@ -91,9 +91,9 @@ nav > ul > li {
   margin-left: .25%;
 }
 
-.choice_label {
+/*.choice_label {
   width: 12%;
-}
+}*/
 
 .survey_submit {
   margin-top: 20px;
