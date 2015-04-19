@@ -62,6 +62,11 @@ nav > ul > li {
 
 /* Survey Results */
 
+.survey_results_link {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .question_pie_chart {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -116,6 +121,16 @@ nav > ul > li {
 
 .first_choice {
   margin-left: .25%;
+}
+
+.survey_warning {
+  width: 70%;
+  margin: auto;
+}
+
+.survey_error {
+  width: 70%;
+  margin: auto;
 }
 
 /*.choice_label {

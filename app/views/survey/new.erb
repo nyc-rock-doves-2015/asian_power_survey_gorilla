@@ -1,15 +1,17 @@
 <div class="survey_form_container jumbotron">
-  <form class="survey_form" action="/surveys" method="post" enctype="multipart/form-data">
-    <h2>Create New Survey</h2>
-    <div class="alert alert-warning" role="alert">
+  <% if flash[:error]  && !flash[:error].empty? %>
+    <div class="survey_error alert alert-danger" role="alert">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
       <span class="sr-only">Error:</span>
-      You have an empty choice field
+      <%= flash[:error] %>
     </div>
+  <% end %>
+  <form class="survey_form" action="/surveys" method="post" enctype="multipart/form-data">
+    <h2>Create New Survey</h2>
     <div class="survey_form_title">
       <div class="form-group">
         <label>Survey Title:</label>
-        <input class="form-control" type="text" name="survey[title]">
+        <input class="form-control new_input" type="text" name="survey[title]">
       </div>
       <div class="form-group">
         <label>Image:</label>

@@ -1,7 +1,7 @@
 
 get '/surveys' do
-  @surveys = Survey.all
-  erb :'/survey/index'
+  @survey = Survey.find_by(link_code: params[:link])
+  erb :'survey/show'
 end
 
 get '/surveys/new' do
@@ -14,10 +14,16 @@ get '/surveys/:id' do |id|
 end
 
 post '/surveys' do
-  survey = Survey.create(title: params[:survey][:title], user_id: current_user.id, image: params[:survey][:image])
-  survey.add_questions(params)
+  title = params[:survey][:title]
+  if title == ""
+    flash[:error] = "Survey needs a title"
+    redirect 'surveys/new'
+  else
+    survey = Survey.create(title: title, user_id: current_user.id, image: params[:survey][:image])
+    survey.add_questions(params)
 
-  redirect survey_url(survey) + "/results"
+    redirect survey_url(survey) + "/results"
+  end
 end
 
 post '/submit' do
