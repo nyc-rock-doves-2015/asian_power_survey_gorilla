@@ -61,16 +61,3 @@ Survey.all.each do |survey|
   end
 end
 
-# John answers a bunch of surveys
-4.times do
-  random_survey = Survey.all.sample
-  random_survey.questions.each do |question|
-    choice_id = question.choices.pluck(:id).sample
-    ChoiceUser.create(choice_id: choice_id, user_id: john.id)
-  end
-end
-
-
-
-
-
