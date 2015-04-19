@@ -133,10 +133,6 @@ nav > ul > li {
   margin: auto;
 }
 
-/*.choice_label {
-  width: 12%;
-}*/
-
 .survey_submit {
   margin-top: 20px;
 }
@@ -147,9 +143,8 @@ nav > ul > li {
 
 /* Take Survey Form */
 
-.survey_fill_out {
-  width: 90%;
-  margin: auto;
+.survey_image {
+  margin-bottom: 20px;
 }
 
 .question_list_item {
