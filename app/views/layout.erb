@@ -40,7 +40,7 @@
         <nav>
           <ul class="nav nav-pills pull-right">
             <% if current_user %>
-            <li role="presentation"><div class="welcome-user">Welcome, John<% current_user.name %></div></li>
+            <li role="presentation"><div class="welcome-user">Welcome, <%= current_user.name %></div></li>
             <li role="presentation"><a href="/signout">Sign out</a></li>
             <% else %>
             <div id="navbar" class="navbar-collapse collapse">
