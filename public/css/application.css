@@ -59,7 +59,8 @@ nav > ul > li {
 /* Survey Results */
 
 .question_pie_chart {
-  /*width: 100px;*/
+  margin-top: 20px;
+  margin-bottom: 20px;
   height: 300px;
 }
 
@@ -72,24 +73,22 @@ nav > ul > li {
 }
 
 .survey_results {
-  width: 90%;
   margin: auto;
+}
+
+.results_row {
+  margin: 0;
 }
 
 /* New Survey Form */
 
 .survey_form_container {
-  width: 90%;
   margin: auto;
 }
 
 .survey_form {
   width: 50%;
   margin: auto;
-}
-
-#choice1 {
-  margin-left: .4%;
 }
 
 .choice_input {
@@ -111,6 +110,9 @@ nav > ul > li {
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
+.first_choice {
+  margin-left: .25%;
+}
 
 .choice_label {
   width: 12%;
