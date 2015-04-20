@@ -1,5 +1,7 @@
 require 'faker'
 
+# Really clever seed file here.  You clearly know how to do Ruby
+#
 john = User.create(name: "John", password: "123");
 
 # create random users

@@ -1,6 +1,6 @@
 
 get '/surveys' do
-  if current_user.nil?
+  if current_user.nil? # current_user is falsy if not logged in, no need to explicitly .nil? check
     flash[:error] = "You must sign in first"
     redirect '/signin'
   else
@@ -19,8 +19,10 @@ get '/surveys/:id' do |id|
 end
 
 post '/surveys' do
+  # Couldn't this be done in the model?
+  # Follow the successful .save pattern up above?
   title = params[:survey][:title]
-  if title == ""
+  if title == "" # #blank? or #empty? might be better
     flash[:error] = "Survey needs a title"
     redirect 'surveys/new'
   else
@@ -32,6 +34,8 @@ post '/surveys' do
 end
 
 post '/submit' do
+  # A method like survey.has_been_taken_by?(current_user) might
+  # be really pretty.  Hide this include? logic inside that.
   survey = Survey.find(params[:survey_id])
   if survey.takers.include?(current_user)
     flash[:error] = "You have already taken this survey"

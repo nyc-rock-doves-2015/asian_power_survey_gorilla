@@ -5,6 +5,7 @@
   <% survey.questions.each do |question| %>
     <li>Question: <%= question.description %></li>
       <ul>
+        <%# partial....would be nice %>
       <% question.choices.each do |choice| %>
         <li><%= choice.description %></li>
       <% end %>

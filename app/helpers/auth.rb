@@ -8,6 +8,7 @@ def session_out!
 end
 
 def current_user
+  # User.find_by(id: session[:user_id] is also an idea
   User.find(session[:user_id]) if session[:user_id]
 end
 

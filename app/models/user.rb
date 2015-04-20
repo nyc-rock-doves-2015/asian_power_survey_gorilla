@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
 
   validates :name, uniqueness: true
 
+  # You have an explicit validation to validate name.  Testing the password and
+  # the confirmation should probably be done at the controller action.
+  # Controllers have the responsibility for testing params
   def self.validate_signup(params)
     return "Username already exists" if User.find_by(name: params[:name])
     return "Password does not match confirmation." if params[:password] != params[:password_confirmation]

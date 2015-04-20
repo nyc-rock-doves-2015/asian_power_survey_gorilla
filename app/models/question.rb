@@ -2,6 +2,8 @@ class Question < ActiveRecord::Base
   belongs_to :survey
   has_many :choices
 
+  # This code scares me
+  
   def add_choices(params, question_key)
     count = params[:survey][question_key][:count].to_i
     count.times do |i|

@@ -10,6 +10,7 @@ class Survey < ActiveRecord::Base
 
   before_create :create_link_code
 
+  # Hm, also scary again.  I wonder why you're scaring me with this code.
   def add_questions(params)
     count = params[:survey][:count].to_i
     count.times do |i|
