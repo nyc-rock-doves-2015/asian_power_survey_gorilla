@@ -1,3 +1,4 @@
+# I would expect this route to live in 'index.rb' or in 'index_controller.rb'
 
 get '/' do
   if current_user
@@ -29,6 +30,18 @@ get '/signup' do
 end
 
 post '/signup' do
+  # I think we can do this more simply like....
+  #
+  # user = User.new(params[:user])
+  # if user.save
+  #   session_in!(user)
+  #   redirect '/'
+  # else
+  #   redirect '/signup'
+  # end
+  #
+  # I would not keep that validation method on User because it basically copies
+  # something AR gives you for free.
   flash[:error] = User.validate_signup(params[:user])
   if !blank(flash.next[:error])
     redirect '/signup'
